@@ -1,0 +1,9 @@
+@import
+    './vendors/normalize',
+    './abstracts/variables',
+    './abstracts/media',
+    './base/globals';
+
+@import
+    './layout/header',
+    './layout/footer';

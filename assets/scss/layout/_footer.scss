@@ -1,3 +1,84 @@
 .footer {
-  
+  border-top: 1px solid $color-black;
+
+  &_logo {
+    max-width: 292px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &_top {
+    background: $color-white;
+    padding: 40px 0 32px 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include media('md') {
+        flex-direction: column;
+        gap: 32px;
+      }
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 16px;
+
+      @include media('md') {
+        align-items: center;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+
+        a {
+          font-family: $font-Albert-Sans;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 100%;
+          color: $color-black;
+
+          @include media('md') {
+            font-size: 14px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    background: $color-black;
+    padding: 24px 0;
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include media('md') {
+        padding: 0 36px;
+      }
+
+      span {
+        font-family: $font-Albert-Sans;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        text-align: center;
+        color: $color-white;
+
+        @include media('md') {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }

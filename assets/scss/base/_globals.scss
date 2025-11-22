@@ -24,9 +24,10 @@ html {
 }
 
 body {
-
+  font-family: $font-Inter;
   font-style: normal;
   font-display: swap;
+  background: $color-grey-bg;
 }
 
 input, textarea {
@@ -63,15 +64,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 .container {
-  max-width: calc(1337px);
+  max-width: calc(1024px);
   margin: 0 auto;
-
-  @include media('lg') {
-    padding: 0 20px;
-  }
-
-}
-
-.section-top {
-  margin-top: 160px;
+  padding: 0 24px;
 }

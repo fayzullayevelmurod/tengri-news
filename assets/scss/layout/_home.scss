@@ -1,0 +1,62 @@
+// home
+.home {
+  .container {
+    background: $color-white;
+  }
+
+  &_head {
+    padding: 24px 0;
+
+    span {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      color: $color-grey-dark;
+    }
+
+    h1 {
+      font-family: $font-Roboto;
+      font-weight: 700;
+      font-size: 44px;
+      line-height: 100%;
+      color: $color-black;
+      padding-bottom: 26px;
+      margin-top: 20px;
+      border-bottom: 1px solid $color-grey-bg;
+      position: relative;
+
+      @include media('lg') {
+        font-size: 28px;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 138px;
+        height: 4px;
+        background: $color-red;
+      }
+    }
+  }
+
+  .share_btns {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 24px;
+    padding: 24px 0;
+
+    .eye {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      color: $color-grey-dark;
+    }
+  }
+}
+// home

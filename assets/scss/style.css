@@ -378,6 +378,60 @@ p, h1, h2, h3, h4, h5, h6 {
   padding: 0 24px;
 }
 
+.home .container {
+  background: #FFFFFF;
+}
+.home_head {
+  padding: 24px 0;
+}
+.home_head span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #656B71;
+}
+.home_head h1 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 100%;
+  color: #000000;
+  padding-bottom: 26px;
+  margin-top: 20px;
+  border-bottom: 1px solid #E9EAE9;
+  position: relative;
+}
+@media (max-width: 1024px) {
+  .home_head h1 {
+    font-size: 28px;
+  }
+}
+.home_head h1::before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 138px;
+  height: 4px;
+  background: #C70303;
+}
+.home .share_btns {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 24px;
+  padding: 24px 0;
+}
+.home .share_btns .eye {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #656B71;
+}
+
 .footer {
   border-top: 1px solid #000000;
 }

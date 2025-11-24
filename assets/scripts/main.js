@@ -85,3 +85,27 @@
   window.addEventListener("hashchange", openFromHash);
 })();
 // tabs
+
+// select
+const langSelect = document.querySelector(".lang-select");
+const langCurrent = document.querySelector(".lang-current span");
+const langItems = document.querySelectorAll(".lang-dropdown li");
+
+langSelect.addEventListener("click", (e) => {
+  langSelect.classList.toggle("active");
+});
+
+langItems.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    e.stopPropagation();
+    langCurrent.textContent = item.dataset.lang;
+    langSelect.classList.remove("active");
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!langSelect.contains(e.target)) {
+    langSelect.classList.remove("active");
+  }
+});
+// select

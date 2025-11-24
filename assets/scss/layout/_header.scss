@@ -1,3 +1,247 @@
 .header {
-  
+  &_top {
+    background: #303133;
+    height: 60px;
+
+    @include media('lg') {
+      display: none;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      padding: 0;
+    }
+
+    &_left {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+
+      a {
+        position: relative;
+        font-family: $font-Albert-Sans;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $color-white;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &.active {
+          &::before {
+            content: '';
+            position: absolute;
+            bottom: -21px;
+            height: 4px;
+            background: $color-red;
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+    }
+
+    &_right {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      a, span {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 100%;
+        color: $color-white;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        &.reklama {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  &_bottom {
+    position: relative;
+    border-bottom: 4px solid $color-grey-bg;
+
+    @include media('lg') {
+      border-bottom: 16px solid $color-grey-bg;
+    }
+
+    .container {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      background: $color-white;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include media('lg') {
+        padding-bottom: 40px;
+      }
+    }
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .burger {
+      @include media('lg') {
+        display: none;
+      }
+    }
+
+    .logo {
+      @include media('lg') {
+        max-width: 170px;
+      }
+    }
+  }
+
+  &_link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include media('lg') {
+      display: none;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 100%;
+      color: $color-black;
+    }
+  }
+
+  .link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: $font-Albert-Sans;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: $color-black;
+    position: relative;
+
+    @include media('lg') {
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      justify-content: center;
+    }
+
+    &::before {
+      content: '';
+      height: 4px;
+      position: absolute;
+      left: 0;
+      bottom: 27px;
+      width: 100%;
+      background: $color-grey-bg;
+    }
+  }
+
+  .lang-select {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #E9EAE9;
+    user-select: none;
+    cursor: pointer;
+
+    @include media('lg') {
+      background: transparent;
+    }
+
+    .lang-current {
+      width: 36px;
+      height: 36px;
+      background: #e6e6e6;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 600;
+      font-size: 18px;
+      color: #b4201a; // qizil rang (rasmdagi kabi)
+
+      @include media('lg') {
+        background: transparent;
+      }
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: 55px;
+      left: 0;
+      width: 70px;
+      background: #fff;
+      border-radius: 10px;
+      padding: 5px 0;
+      box-shadow: 0px 5px 20px rgba(0,0,0,0.1);
+      display: none;
+      z-index: 2;
+
+      li {
+        padding: 8px 0;
+        text-align: center;
+        font-size: 16px;
+        color: #444;
+        transition: .2s;
+
+        &:hover {
+          background: #f0f0f0;
+        }
+      }
+    }
+
+    &.active .lang-dropdown {
+      display: block;
+    }
+  }
+
+  .search_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $color-grey-bg;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    @include media('lg') {
+      background: transparent;
+    }
+  }
+
+  &_btns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 }

@@ -716,6 +716,50 @@ p, h1, h2, h3, h4, h5, h6 {
   text-align: center;
   margin-top: 12px;
 }
+.blog_wrap .tabs__head {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #E9EAE9;
+  padding-bottom: 5px;
+}
+.blog_wrap .tabs__tab {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  color: #656B71;
+  position: relative;
+}
+.blog_wrap .tabs__tab::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: #C70303;
+  display: none;
+}
+.blog_wrap .tabs__tab[aria-selected=true] {
+  font-weight: 600;
+}
+.blog_wrap .tabs__tab[aria-selected=true]::before {
+  display: block;
+}
+.blog_wrap .tabs__panels {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #eef3fb;
+  box-shadow: 0 8px 24px rgba(13, 36, 77, 0.04);
+}
+.blog_wrap .tabs__panel {
+  display: block;
+}
+.blog_wrap .tabs__panel[hidden] {
+  display: none;
+}
 
 .footer {
   border-top: 1px solid #000000;

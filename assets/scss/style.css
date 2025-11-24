@@ -382,7 +382,7 @@ p, h1, h2, h3, h4, h5, h6 {
   background: #FFFFFF;
 }
 .home_head {
-  padding: 24px 0;
+  padding: 24px 0 0 0;
 }
 .home_head span {
   font-weight: 400;
@@ -422,6 +422,11 @@ p, h1, h2, h3, h4, h5, h6 {
   gap: 24px;
   padding: 24px 0;
 }
+@media (max-width: 1024px) {
+  .home .share_btns {
+    justify-content: start;
+  }
+}
 .home .share_btns .eye {
   display: flex;
   align-items: center;
@@ -430,6 +435,45 @@ p, h1, h2, h3, h4, h5, h6 {
   font-size: 14px;
   line-height: 100%;
   color: #656B71;
+}
+.home .share_btns .share_btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-shrink: 0;
+}
+.home_img {
+  width: 100%;
+  height: 542px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 4px;
+}
+@media (max-width: 768px) {
+  .home_img {
+    height: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .home_img {
+    height: 200px;
+  }
+}
+.home p {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 32px;
+  color: #000000;
+  padding: 24px 0;
+  border-bottom: 1px solid #E9EAE9;
+}
+@media (max-width: 1024px) {
+  .home p {
+    font-size: 18px;
+    line-height: 25px;
+  }
 }
 
 .footer {

@@ -5,7 +5,7 @@
   }
 
   &_head {
-    padding: 24px 0;
+    padding: 24px 0 0 0;
 
     span {
       font-weight: 400;
@@ -48,6 +48,10 @@
     gap: 24px;
     padding: 24px 0;
 
+    @include media('lg') {
+      justify-content: start;
+    }
+
     .eye {
       display: flex;
       align-items: center;
@@ -56,6 +60,43 @@
       font-size: 14px;
       line-height: 100%;
       color: $color-grey-dark;
+    }
+
+    .share_btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      flex-shrink: 0;
+    }
+  }
+
+  &_img {
+    width: 100%;
+    height: 542px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+
+    @include media('md') {
+      height: 300px;
+    }
+
+    @include media('xs') {
+      height: 200px;
+    }
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    color: $color-black;
+    padding: 24px 0;
+    border-bottom: 1px solid $color-grey-bg;
+
+    @include media('lg') {
+      font-size: 18px;
+      line-height: 25px;
     }
   }
 }

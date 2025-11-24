@@ -358,7 +358,6 @@ address {
 
 .wrapper {
   width: 100%;
-  overflow: hidden;
 }
 
 ul, ol, dl {
@@ -479,11 +478,19 @@ p, h1, h2, h3, h4, h5, h6 {
 .blog_wrap .container {
   background: #FFFFFF;
   padding-top: 18px;
+  padding-bottom: 64px;
   display: flex;
   align-items: start;
   gap: 40px;
 }
+@media (max-width: 1024px) {
+  .blog_wrap .container {
+    gap: 0;
+  }
+}
 .blog_wrap .social_fix {
+  position: sticky;
+  top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -492,11 +499,21 @@ p, h1, h2, h3, h4, h5, h6 {
   padding-left: 16px;
   border-bottom: 1px solid #E9EAE9;
 }
+@media (max-width: 1024px) {
+  .blog_wrap .social_fix {
+    display: none;
+  }
+}
 .blog_wrap .blog_wrap_in {
   max-width: 764px;
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+@media (max-width: 1024px) {
+  .blog_wrap .blog_wrap_in {
+    max-width: 100%;
+  }
 }
 .blog_wrap .blog_block {
   display: flex;
@@ -511,6 +528,11 @@ p, h1, h2, h3, h4, h5, h6 {
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+}
+@media (max-width: 1024px) {
+  .blog_wrap .blog_block img {
+    height: 340px;
+  }
 }
 .blog_wrap .blog_block b {
   font-family: "Albert-Sans", sans-serif;
@@ -574,6 +596,11 @@ p, h1, h2, h3, h4, h5, h6 {
   background: #FBF2F2;
   border-left: 4px solid #C70303;
 }
+@media (max-width: 1024px) {
+  .blog_wrap blockquote {
+    padding: 42px 26px;
+  }
+}
 .blog_wrap blockquote .one {
   position: absolute;
   top: 16px;
@@ -606,12 +633,22 @@ p, h1, h2, h3, h4, h5, h6 {
   background: #C70303;
   text-align: center;
 }
+@media (max-width: 1024px) {
+  .blog_wrap .more_block {
+    padding: 24px 20px;
+  }
+}
 .blog_wrap .more_block h2 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 44px;
   line-height: 100%;
   color: #FFFFFF;
+}
+@media (max-width: 1024px) {
+  .blog_wrap .more_block h2 {
+    font-size: 27px;
+  }
 }
 .blog_wrap .more_block p {
   color: #FFFFFF;
@@ -640,6 +677,7 @@ p, h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 12px;
   margin-bottom: 64px;
+  flex-wrap: wrap;
 }
 .blog_wrap .comment_block .teg span {
   padding: 9px 12px;
@@ -743,22 +781,104 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 .blog_wrap .tabs__tab[aria-selected=true] {
   font-weight: 600;
+  color: #000000;
 }
 .blog_wrap .tabs__tab[aria-selected=true]::before {
   display: block;
 }
-.blog_wrap .tabs__panels {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #eef3fb;
-  box-shadow: 0 8px 24px rgba(13, 36, 77, 0.04);
-}
 .blog_wrap .tabs__panel {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.blog_wrap .tabs__panel .red_btn {
+  text-transform: capitalize;
 }
 .blog_wrap .tabs__panel[hidden] {
   display: none;
+}
+.blog_wrap .tabs_panel_block {
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(41, 45, 57, 0.0784313725);
+}
+.blog_wrap .tabs_panel_block .dot_icon {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  cursor: pointer;
+}
+.blog_wrap .tabs_panel_block_head {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 12px;
+}
+.blog_wrap .tabs_panel_block_head .user_img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  flex-shrink: 0;
+}
+.blog_wrap .tabs_panel_block_head .flag {
+  width: 18px;
+  height: 12px;
+  display: flex;
+  flex-shrink: 0;
+}
+.blog_wrap .tabs_panel_block_head h6 {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 25px;
+  color: #000000;
+}
+.blog_wrap .tabs_panel_block_head span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: #000000;
+}
+.blog_wrap .tabs_panel_block p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #000000;
+}
+.blog_wrap .tabs_panel_block .likes {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 14px 0;
+}
+.blog_wrap .tabs_panel_block .likes span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.blog_wrap .tabs_panel_block .likes .comment_btn {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+  color: #656B71;
+}
+.blog_wrap .tabs_panel_block .likes .comment_more_btn {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  color: #656B71;
+}
+.blog_wrap .end_block {
+  margin-left: 24px;
+  padding-left: 15px;
+  border-left: 1px solid #E9EAE9;
 }
 
 .footer {
